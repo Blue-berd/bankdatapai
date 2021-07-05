@@ -6,7 +6,7 @@
         "module": "bankdata.wsgi:application",
         "managetasks": [
             "collectstatic --noinput",
-            "migrate" 
+            "migrate --no-input"
         ]
     }
 }
