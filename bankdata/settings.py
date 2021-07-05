@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'bankdata.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRESQL_ADDON_DB', 'bank'),
-        'USER': os.environ.get('POSTGRESQL_ADDON_USER', 'postgres'),
-        'PASSWORD': os.environ.get('POSTGRESQL_ADDON_PASSWORD', "Jaysardar1@3"),
+        'NAME': os.environ.get('POSTGRESQL_ADDON_DB', ''),
+        'USER': os.environ.get('POSTGRESQL_ADDON_USER', ''),
+        'PASSWORD': os.environ.get('POSTGRESQL_ADDON_PASSWORD', ""),
         'HOST': os.environ.get('POSTGRESQL_ADDON_HOST', ''),
         'PORT': os.environ.get('POSTGRESQL_ADDON_PORT', 5432),
     }
