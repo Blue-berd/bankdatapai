@@ -3,7 +3,7 @@
         "cache_dependancies": true
     },
     "deploy": {
-        "module": "bankdata.wsgi:application",
+        "module": "common.wsgi:application",
         "managetasks": [
             "collectstatic --noinput",
             "migrate --no-input"

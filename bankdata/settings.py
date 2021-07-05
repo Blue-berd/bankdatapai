@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gi_)9#8-#pildbu9n8$9sbkvhvaemcu%2o1&#skja^1_)zi@^2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['<APP_ID>.cleverapps.io',]
+ALLOWED_HOSTS = ['<APP_ID>.cleverapps.io',"*"]
 
 
 # Application definition
@@ -129,7 +129,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-STATIC_ROOT=os.path.join(BASE_DIR,"staticfiles") 
+STATIC_ROOT=os.path.join(BASE_DIR,"staticfiles")
+
 #correct# Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
