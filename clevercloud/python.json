@@ -5,7 +5,8 @@
     "deploy": {
         "module": "bankdata.wsgi:application",
         "managetasks": [
-            "collectstatic --noinput"
+            "collectstatic --noinput",
+            "migrate" 
         ]
     }
 }
