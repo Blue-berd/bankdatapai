@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT bankdata.wsgi:application
+web: waitress-serve --port=8000 bankdata.wsgi:application

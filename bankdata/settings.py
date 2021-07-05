@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gi_)9#8-#pildbu9n8$9sbkvhvaemcu%2o1&#skja^1_)zi@^2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -81,10 +81,11 @@ WSGI_APPLICATION = 'bankdata.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'USER': 'postgres',
-        'NAME': 'bank',
-        'PORT': '',
-        'PASSWORD':"Jaysardar1@3"
+        'NAME': os.environ.get('POSTGRESQL_ADDON_DB', 'bank'),
+        'USER': os.environ.get('POSTGRESQL_ADDON_USER', 'postgres'),
+        'PASSWORD': os.environ.get('POSTGRESQL_ADDON_PASSWORD', "Jaysardar1@3"),
+        'HOST': os.environ.get('POSTGRESQL_ADDON_HOST', None),
+        'PORT': os.environ.get('POSTGRESQL_ADDON_PORT', 5432),
     }
 }
 
@@ -127,8 +128,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-STATIC_ROOT=os.path.join(BASE_DIR,"/static/") 
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "/static/"),)
+STATIC_ROOT=os.path.join(BASE_DIR,"static") 
 #correct# Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
